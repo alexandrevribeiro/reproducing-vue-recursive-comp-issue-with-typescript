@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <comp-1></comp-1> -->
     <component 
       v-for="(item, index) in comps" :key="index" 
       :is="item.component"
