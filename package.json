@@ -2,7 +2,7 @@
   "name": "reproducing-vue-recursive-comp-issue-with-typescript",
   "description": "A Vue.js project meant to reproduce an issue ocurring when trying to use a Recursive Component when using TypeScript.",
   "version": "1.0.0",
-  "author": "alexandrevribeiro <vribeiro.alexandre@gmail.com>",
+  "author": "Alexandre Ribeiro <vribeiro.alexandre@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
