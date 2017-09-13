@@ -2,7 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/main.ts',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
@@ -11,12 +11,21 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.ts$/,
+        exclude: /node_modules|vue\/src/,
+        loader: 'ts-loader',
+        options: {
+            appendTsSuffixTo: [/\.vue$/]
+        }
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
           loaders: {
-          }
+          },
           // other vue-loader options go here
+          esModule: true
         }
       },
       {
@@ -34,6 +43,7 @@ module.exports = {
     ]
   },
   resolve: {
+    extensions: ['.ts', '.js', '.vue'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     }

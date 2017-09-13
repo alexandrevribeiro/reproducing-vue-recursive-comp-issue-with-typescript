@@ -5,7 +5,9 @@
 </template>
 
 <script>
-    export default {
-        name: 'comp-3'
-    }
+    import Vue from 'vue'
+    import Component from 'vue-class-component'
+
+    @Component
+    export default class Comp3 extends Vue { }
 </script>
