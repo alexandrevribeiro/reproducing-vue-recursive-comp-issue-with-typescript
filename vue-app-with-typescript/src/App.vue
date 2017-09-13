@@ -1,0 +1,54 @@
+<template>
+  <div id="app">
+    <!-- <comp-1></comp-1> -->
+    <component 
+      v-for="(item, index) in comps" :key="index" 
+      :is="item.component"
+      :childComp="item.child"></component>
+  </div>
+</template>
+
+<script>
+
+import Comp1 from './components/Comp1.vue'
+import Comp2 from './components/Comp2.vue'
+import Comp3 from './components/Comp3.vue'
+
+export default {
+  name: 'app',
+  components: {
+    Comp1,
+    Comp2,
+    Comp3
+  },
+  data () {
+    return {
+      comps: [
+        { 
+          component: "comp-1" 
+        },
+        { 
+          component: "comp-2",
+          child: { 
+            component: "comp-1"
+          }
+        },
+        { 
+          component: "comp-3" 
+        }
+      ]
+    }
+  }
+}
+</script>
+
+<style>
+.component-test {
+  border: solid 1px black;
+  width: 210px;
+  height: 20px;
+  padding: 15px;
+  margin: 25px;
+  font-weight: bold;
+}
+</style>
