@@ -9,7 +9,7 @@
     import Component from 'vue-class-component'
 
     @Component({
-        name: 'comp-1'
+        // name: 'comp-1'
     })
     export default class Comp1 extends Vue { }
 </script>
