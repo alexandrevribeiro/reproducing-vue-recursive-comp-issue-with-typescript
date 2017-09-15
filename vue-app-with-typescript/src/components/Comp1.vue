@@ -15,6 +15,7 @@
     import Comp3 from './Comp3.vue'
 
     @Component({
+        name: 'comp-1',
         components: {
             Comp2,
             Comp3
