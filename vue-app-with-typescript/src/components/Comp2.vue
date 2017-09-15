@@ -1,8 +1,9 @@
 <template>
     <div>
-        <div class="component-test">Component 2 (may have child)</div>        
-        <div style="margin-left: 30px;">
-            <component v-if="childComp" :is="childComp.component" ></component>
+        <div class="component-test">Component 2</div>        
+        <div style="margin-left: 30px;" v-if="childComp" >
+            <component :is="childComp.component" :childComp="childComp.child">                
+            </component>
         </div>
     </div>
 </template>

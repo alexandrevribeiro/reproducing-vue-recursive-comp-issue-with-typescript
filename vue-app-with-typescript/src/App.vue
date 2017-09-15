@@ -32,7 +32,7 @@
         child: { 
           component: "comp-1",
           child: { 
-            component: "comp-1"
+            component: "comp-2"
           }
         }
       },
