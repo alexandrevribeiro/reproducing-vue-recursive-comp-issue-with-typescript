@@ -1,26 +1,23 @@
 <template>
     <div>
-        <div class="component-test">Component 2 (may have child)</div>        
-        <div style="margin-left: 30px;">
-            <component v-if="childComp" :is="childComp.component" ></component>
+        <div class="component-test">Component 2</div>        
+        <div style="margin-left: 30px;" v-if="childComp" >
+            <component :is="childComp.component" :childComp="childComp.child">                
+            </component>
         </div>
     </div>
 </template>
 
-<script>    
-    import Comp1 from './Comp1.vue'
-    import Comp2 from './Comp2.vue'
-    import Comp3 from './Comp3.vue'
-
+<script>
     export default {
         name: 'comp-2',
-        components: {
-            Comp1,
-            Comp2,
-            Comp3
-        },
         props: {
             childComp: Object
+        },
+        beforeCreate: function () {
+            this.$options.components.Comp1 = require('./Comp1.vue');
+            this.$options.components.Comp2 = require('./Comp2.vue');
+            this.$options.components.Comp3 = require('./Comp3.vue');
         }
     }
 </script>
