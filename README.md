@@ -1,4 +1,4 @@
-# Reproducing issue found when using recursive Vue components in TypeScript (error occurring only when using TypeScript)
+# Reproducing issue of using recursive Vue components in TypeScript
 
 This repository is only meant to to reproduce an issue occurring when trying to use a Recursive Vue Components in TypeScript.
 
@@ -25,7 +25,7 @@ found in
 
 
 ## Reproduction projects
-I've created two projects: a **standard Vue app** ([standard-vue-app]) and a **Vue app with TypeScript** ([vue-app-with-typescript]), which basically are the same:
+I've created two projects: the [standard-vue-app] (working) and the [vue-app-with-typescript] (not working), which basically are the same:
 
 1. Both have two components (`Comp1.vue` and `Comp2.vue`), which may render a child component depending on the `childComp` prop.
 2. The `App.vue` defines an object with the components hierarchy that should be rendered:
@@ -53,7 +53,7 @@ comps: [
   - Error was solved by using the `name` component option (as recommended in the [official documentation](https://vuejs.org/v2/guide/components.html#Recursive-Components))
   - For some reason I also had to register the local components in the `beforeCreate` hook (as suggested when having [circular references](https://vuejs.org/v2/guide/components.html#Circular-References-Between-Components), although I don't directly have circular references) to solve the following error: `[Vue warn]: Failed to mount component: template or render function not defined.`
 - [vue-app-with-typescript]:
-  - vue-cli template: *webpack* (for some reason I only could configure TypeScript using that template, even when I used the same configuration in the *webpack-simple* template I couldn't make it work).
+  - vue-cli template: *webpack* (for some reason I only could configure TypeScript using that template, even when I used the same configuration with the *webpack-simple* template I couldn't make it work).
   - Even configuring the `name` in the components ( `@Component({ name:  'comp-1' })` ) the error continue been shown.
 
 
