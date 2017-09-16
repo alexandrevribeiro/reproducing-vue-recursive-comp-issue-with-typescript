@@ -10,7 +10,7 @@ Component 1
   Component 2
     Component 1
 ```
-> **Disclaimer:** This is just an example to simulate my real problem, where I have some components to render a JSON (such as JsonProperty, JsonObject, JsonValue, ...), and at a certain point the `JsonObject` renders a `JsonValue` which in turn also render a `JsonObject`.
+> **Disclaimer:** This is just an example to simulate my real problem, where I have some components to render a JSON (such as JsonProperty.vue, JsonObject.vue, JsonValue.vue, ...), and at a certain point the `JsonObject` renders a `JsonValue` which in turn also renders a `JsonObject`.
 
 ## Error
 ```
@@ -28,7 +28,7 @@ found in
 I've created two projects: a **standard Vue app** ([standard-vue-app]) and a **Vue app with TypeScript** ([vue-app-with-typescript]), which basically are the same:
 
 1. Both have two components (`Comp1.vue` and `Comp2.vue`), which may render a child component depending on the `childComp` prop.
-1. The `App.vue` defines an object with the components hierarchy that should be rendered:
+2. The `App.vue` defines an object with the components hierarchy that should be rendered:
   ```
 comps: [
     { 
@@ -42,10 +42,16 @@ comps: [
     }
 ]
   ```
-1. Expected result for both:
+3. Expected result for both:
 
 ![Expected result][expected-result]
 
+## Particularities of the projects
+
+- [standard-vue-app]:
+  - vue-cli template: *webpack-simple*
+  - Error was solved by using the `name` component option (as recommended in the [official documentation](https://vuejs.org/v2/guide/components.html#Recursive-Components))
+  - For 
 
 
 
