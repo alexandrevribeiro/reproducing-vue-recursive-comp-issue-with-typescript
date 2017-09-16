@@ -17,7 +17,6 @@
         beforeCreate() {
             this.$options.components.Comp1 = require('./Comp1.vue');
             this.$options.components.Comp2 = require('./Comp2.vue');
-            this.$options.components.Comp3 = require('./Comp3.vue');
         }
     }
 </script>
