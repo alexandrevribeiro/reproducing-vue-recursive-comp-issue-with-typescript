@@ -29,10 +29,10 @@ export default {
         { 
           component: "comp-2",
           child: { 
-            component: "comp-1"//,
-            // child: { 
-            //   component: "comp-2"
-            // }
+            component: "comp-1",
+            child: { 
+              component: "comp-2"
+            }
           }
         },
         { component: "comp-3" }
