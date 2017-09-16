@@ -13,31 +13,27 @@
   import Component from 'vue-class-component'
   import Comp1 from './components/Comp1.vue'
   import Comp2 from './components/Comp2.vue'
-  import Comp3 from './components/Comp3.vue'
 
   @Component({
     components: {
         Comp1,
-        Comp2,
-        Comp3
+        Comp2
       }
   })
   export default class App extends Vue { 
 
     /** Components to be rendered */
     comps = [
-      { component: "comp-1"  },
-      { 
-        component: "comp-2",
-        child: { 
+        { 
           component: "comp-1",
           child: { 
-            component: "comp-2"
+            component: "comp-2",
+            child: { 
+              component: "comp-1"
+            }
           }
         }
-      },
-      { component: "comp-3" }
-    ]
+      ]
 }
 </script>
 

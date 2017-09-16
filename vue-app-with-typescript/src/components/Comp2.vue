@@ -12,17 +12,19 @@
     import Vue from 'vue'
     import Component from 'vue-class-component'
     import Comp1 from './Comp1.vue'
-    import Comp3 from './Comp3.vue'
 
     @Component({
         name: 'comp-2',
         components: {
-            Comp1,
-            Comp3
+            Comp1
         },
         props: {
             childComp: Object
         }
     })
-    export default class Comp2 extends Vue { }
+    export default class Comp2 extends Vue { 
+        // beforeCreate() {
+        //     this.$options.components.Comp1 = require('./Comp1.vue');
+        // }
+    }
 </script>
