@@ -51,7 +51,10 @@ comps: [
 - [standard-vue-app]:
   - vue-cli template: *webpack-simple*
   - Error was solved by using the `name` component option (as recommended in the [official documentation](https://vuejs.org/v2/guide/components.html#Recursive-Components))
-  - For 
+  - For some reason I also had to register the local components in the `beforeCreate` hook (as suggested when having [circular references](https://vuejs.org/v2/guide/components.html#Circular-References-Between-Components), although I don't directly have circular references) to solve the following error: `[Vue warn]: Failed to mount component: template or render function not defined.`
+- [vue-app-with-typescript]:
+  - vue-cli template: *webpack* (for some reason I only could configure TypeScript using that template, even when I used the same configuration in the *webpack-simple* template I couldn't make it work).
+  - Even configuring the `name` in the components ( `@Component({ name:  'comp-1' })` ) the error continue been shown.
 
 
 
