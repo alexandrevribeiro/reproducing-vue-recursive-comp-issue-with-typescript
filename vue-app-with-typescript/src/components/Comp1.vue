@@ -11,7 +11,7 @@
 <script>
     import Vue from 'vue'
     import Component from 'vue-class-component'
-    import Comp2 from './Comp1.vue'
+    import Comp2 from './Comp2.vue'
 
     @Component({
         name: 'comp-1',
