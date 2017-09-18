@@ -11,7 +11,7 @@
 <script>        
     import Vue from 'vue'
     import Component from 'vue-class-component'
-    import Comp1 from './Comp1.vue'
+    const Comp1 = () => import('./Comp1.vue')
 
     @Component({
         name: 'comp-2',
