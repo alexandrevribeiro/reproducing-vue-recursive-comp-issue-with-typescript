@@ -11,8 +11,8 @@
 
   import Vue from 'vue'
   import Component from 'vue-class-component'
-  import Comp1 from './components/Comp1.vue'
-  import Comp2 from './components/Comp2.vue'
+  const Comp1 = () => import('./components/Comp1.vue')
+  const Comp2 = () => import('./components/Comp2.vue')
 
   @Component({
     components: {
